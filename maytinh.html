@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<input type="number" id='num1' placeholder="Nhập số của bạn">
+<button onclick="calculate('plus')"  type="button" class="do">cộng</button>
+<button onclick="calculate('subtract')" type="button" class="do">trừ</button>
+<input type="number" id='num2' placeholder="Nhập số của bạn"><br>
+<span><strong>Result :</strong></span>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function calculate(operation){
+        var num1 =parseFloat(document.getElementById('num1').value);
+        var num2 =parseFloat(document.getElementById('num2').value);
+        var result;
+        switch (operation){
+            case 'plus':
+                result= num1+num2;
+            break;
+            case 'subtract':
+                result= num1 - num2;
+                break;
+            default:
+                result = "không có"
+        }
+        document.getElementById('result').innerText = result
+    }
+</script>
